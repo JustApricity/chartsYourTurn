@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chartjs and bar chart</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div style='width: 900px'>
+    <canvas id="myChart"></canvas>
+</div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossOrigin="anonymous" referrerpolicy="no-referrer"> </script>
+<script>
+    var ctx = document.getElementById('myChart');
+    var myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['Has dog(s)', 'Has cat(s)', 'Has bird/reptile/fish(s)', 'Has no pets'],
+            datasets: [{
+                label: 'Pet Owners',
+                data: [12, 10, 6, 5],
+                backgroundColor: [
+                    'rgba(160, 234, 239, 0.5)',
+                    'rgba(196, 136, 231, 0.5)',
+                    'rgba(255, 255, 255)',
+                    'rgba(243, 80, 80, 0.5)'
+
+                ],
+                borderColor: [
+                    'rgba(71, 145, 150, 1)',
+                    'rgba(99, 60, 121, 1)',
+                    'rgba(0, 0, 0)',
+                    'rgba(106, 7, 7, 1)'
+                ],
+                borderWidth: 5
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            indexAxis: 'y'
+        }
+    });
+</script>
+</html>
